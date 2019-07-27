@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS company (
 	email varchar(20) NOT NULL,
 	phone varchar(20) NOT NULL,
 
-	logo varchar(20) NOT NULL
+	logo varchar(100) NOT NULL
 	
 );
