@@ -1,6 +1,6 @@
 use mysql;
 
-CREATE TABLE cv_details (
+CREATE TABLE IF NOT EXISTS cv_details (
 	user_id int AUTO_INCREMENT PRIMARY KEY,
 	
 	username varchar(20) NOT NULL,
