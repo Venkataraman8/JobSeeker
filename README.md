@@ -18,4 +18,7 @@
   View responses to created jobs.  
   Download CVs of applicants.  
   Create New Job for posting.  
+
+### JOB CATEGORIES
+arts, education, entertainment, finance, health, home, hospitality, IT(product), IT(service), management, marketing, transportation.
    
