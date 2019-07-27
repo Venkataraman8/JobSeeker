@@ -2,7 +2,7 @@
 ## LOADING  
 1. Install Apache server MySQL PHP (xampp) 
 2. Inside htdocs, create folder JobSeeker & dump php files, assets
-3. Create tables cv_details, company, jobs, sent_cvs 
+3. Create tables cv_details, company, jobs, sent_cvs (use tables.php)
 4. create folders cv,logos in directory FormBuilder/uploads  
 5. localhost//JobSeeker/
 
