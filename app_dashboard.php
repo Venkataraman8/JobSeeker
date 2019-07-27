@@ -62,7 +62,7 @@ $result=$select->get_result();
 		echo
 "<table class='table  table-dark' style='opacity:0.8;'>
 <tr>
-<th>COMPANY NAME</th>
+<th>COMPANY </th>
 <th>JOB</th>	
 <th>CATEGORY</th>
 <th>DETAILS</th>
@@ -163,6 +163,7 @@ var content = document.getElementById("modal-content");
 <Title>Dashboard</Title>
 </head>
 <body>
+
 		<div id="myModal" class="modal">
 			<div class="modal-content" id="modal-content">
 			</div>

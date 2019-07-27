@@ -64,7 +64,7 @@ $result=$select->get_result();
 		echo
 "<table class='table  table-dark' style='opacity:0.8;'>
 <tr>
-<th>COMPANY NAME</th>
+<th>COMPANY</th>
 <th>JOB</th>	
 <th>CATEGORY</th>
 <th>DETAILS</th>
