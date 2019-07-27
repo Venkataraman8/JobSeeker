@@ -83,6 +83,15 @@ while($row=$result->fetch_assoc())
 						if($row1==NULL) {$color='white';$display='none';}
 							else {$color='green';$display='block';}
 						$select1->close();
+						
+						$sel=$mysqli->prepare("SELECT * from company where username=?");
+						$sel->bind_param("s",$row['employer']);
+						$sel->execute();
+						$res=$sel->get_result();
+						$r=$res->fetch_assoc();
+						$sel->close();
+						$file_system_path=$r['logo'];
+						$web_path=str_replace("'","\'",str_replace($_SERVER['DOCUMENT_ROOT'].'/JobSeeker/', './', $file_system_path));
 echo"<td><input type='button' class='btn btn-primary' value='More...' onclick=\"(function(){
 	
 	if(document.getElementById('myModal') && document.getElementById('modal-content') )
@@ -91,7 +100,7 @@ echo"<td><input type='button' class='btn btn-primary' value='More...' onclick=\"
 	var content=document.getElementById('modal-content');
 	
 		modal.style.display='block';
-		content.innerHTML='<center><h3>".$row['company']."</h3></center>'+
+		content.innerHTML='<center><h3><img src=\'{$web_path}\' width=50 height=50 />".$row['company']."</h3></center>'+
 		'<center>".$row['title']."</center><br>'+
 			'Description: ".$row['description']."</br>'+
 			'Fields: ".$row['fields']."</br>'+
