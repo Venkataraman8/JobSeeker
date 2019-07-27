@@ -239,7 +239,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 		<div class="form-group">
 		<label for ="first_name" class="col-md-3 control-label" >FirstName :*</label>
 		<div class="col-md-5">
-		<input type="text" name="first_name" placeholder="First Name" class="form-control" autofocussize="10"value="<?php echo $filled_first;?>"/>
+		<input type="text" name="first_name" placeholder="First Name" class="form-control" autofocus size="10"value="<?php echo $filled_first;?>"/>
 		<span class="error"> <?php echo $firstErr;?></span><br/>
 		</div>
 		</div>
