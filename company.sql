@@ -1,6 +1,6 @@
 use mysql;
 
-CREATE TABLE company (
+CREATE TABLE IF NOT EXISTS company (
 	user_id int AUTO_INCREMENT PRIMARY KEY,
 	
 	username varchar(20) NOT NULL,
