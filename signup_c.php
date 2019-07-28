@@ -219,7 +219,7 @@ error:function (){}
 		<div class="form-group">
 		<label for="user_name" class="col-md-3 control-label">User Name:*</label>
 		<div class="col-md-5">
-		<input type="text" name="user_name" placeholder="User Name" class="form-control" autofocus value="<?php echo $filled_name?>"onBlur="checkAvailability()" size=10 />
+		<input type="text" name="user_name" id="user_name" placeholder="User Name" class="form-control" autofocus value="<?php echo $filled_name?>"onBlur="checkAvailability()" size=10 />
 		<span id="user-availability-status"></span>
 		<span class="error"> <?php echo $nameErr;?></span>
 		<p><img src="LoaderIcon.gif" id="loaderIcon" style="display:none" /></p>
