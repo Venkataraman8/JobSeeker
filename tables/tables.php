@@ -59,10 +59,17 @@ $create4="CREATE TABLE IF NOT EXISTS sent_cvs(
 	job_id int NOT NULL,
 	selected varchar(10)
 );";
+$create5="CREATE TABLE IF NOT EXISTS notifications(
+	
+	job_id int NOT NULL,
+	username varchar(20) NOT NULL
+	
+);";
 
 
 mysqli_query($con,$create1) or die(mysqli_error($con));
 mysqli_query($con,$create2) or die(mysqli_error($con));
 mysqli_query($con,$create3) or die(mysqli_error($con));
 mysqli_query($con,$create4) or die(mysqli_error($con));
+mysqli_query($con,$create5) or die(mysqli_error($con));
 ?>
