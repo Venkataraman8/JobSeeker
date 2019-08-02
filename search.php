@@ -15,6 +15,7 @@ exit();
 
 require "database_connection.php";
 $search_field=$_REQUEST['search'];
+$parameter=$search_field."%";
 $username=$_SESSION['user_name'];
 
 echo "<body>
@@ -54,8 +55,8 @@ echo "<body>
 ";
 
 
-$select=$mysqli->prepare("SELECT * FROM jobs WHERE fields=?");
-$select->bind_param("s",$search_field);
+$select=$mysqli->prepare("SELECT * FROM jobs WHERE fields LIKE ?");
+$select->bind_param("s",$parameter);
 $select->execute();
 $result=$select->get_result();
 
@@ -164,7 +165,9 @@ var content = document.getElementById("modal-content");
 </head>
 <body>
 		<div id="myModal" class="modal">
+		<div class='modalin' style="width:80%;margin:auto;">
 			<div class="modal-content" id="modal-content">
+		</div>
 			</div>
 		</div>
 

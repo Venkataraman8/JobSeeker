@@ -15,7 +15,7 @@ exit();
 
 require "database_connection.php";
 $username=$_SESSION['user_name'];
-
+$k=0;
 echo "<body>
 <section class='header'>
 <div class='container'>
@@ -94,8 +94,9 @@ $username=$row1['username'];
 				<td>{$row2['location']}</td>
 				<td>{$row2['aadhar']}</td>
 				<td><a href='{$web_path}' download>Download CV</a></td>
+				<td><button id={$k} onclick=notify({$k},{$row['job_id']},'{$row2['username']}') >Select</button></td>
 				</tr>";
-				
+				$k++;
 			}
 			$select2->close();
 	}
@@ -109,7 +110,24 @@ $select->close();
 <html>
 <head>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script>
+function notify(button_id,job_id,username) 
+{
+console.log(username);
+jQuery.ajax({
+url: "notify.php",
+data:{username:username, job_id:job_id},
+type: "POST",
+success:function(data)
+{
+$('#'+button_id).css('background-color','green');
+},
+error:function (){}
+});
+}
 
+
+</script>
 <link href='com_dashboard8.css' rel='stylesheet' type='text/css'>	
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

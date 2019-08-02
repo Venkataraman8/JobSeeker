@@ -38,7 +38,7 @@ $select->close();
 				$_SESSION["user_name"]=$user_name;
 				$_SESSION["user_id"]=$correct_user_id;
 				$_SESSION['type']='applicant';
-				header("Location:app_dashboard.php");
+				header("Location:app_dashboard_new.php");
 				exit();
 			}
 			
@@ -75,7 +75,7 @@ $select->close();
 				$_SESSION["user_name"]=$user_name;
 				$_SESSION["user_id"]=$correct_user_id;
 				$_SESSION['type']='company';
-				header("Location:com_dashboard.php");
+				header("Location:com_dashboard_new.php");
 				exit();
 			}
 			

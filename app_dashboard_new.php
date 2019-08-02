@@ -27,7 +27,7 @@ echo "<body>
 			  
               <div class='collapse navbar-collapse' id='navbarNav'>
 			  <div class='col-sm-5 col-md-5 navbar-nav ml-auto text-right'>
-        <form class='navbar-form' role='search' method='POST' action='search.php'>
+        <form class='navbar-form' role='search' method='POST' action='search_new.php'>
         <div class='input-group'>
             <input type='text' class='form-control' placeholder='Search By Field' name='search'>
             <div class='input-group-btn'>
@@ -38,7 +38,7 @@ echo "<body>
     </div>
                 <ul class='navbar-nav ml-auto text-right'>
                   <li class='nav-item'>
-                    <a class='nav-link active-home ' href='app_dashboard.php'>Dashboard</a>
+                    <a class='nav-link active-home ' href='app_dashboard_new.php'>Dashboard</a>
                   </li>
                   <li class='nav-item'>
                     <a class='nav-link' href='profile.php'>Profile</a>
@@ -52,13 +52,38 @@ echo "<body>
   </nav>
 ";
 
+$nselect=$mysqli->prepare("SELECT * FROM notifications where username=?");
+$nselect->bind_param("s",$username);
+$nselect->execute();
+$nresult=$nselect->get_result();
+
+echo"<table class='table table-striped table-dark'>
+<tr style='background-color:#460505'>
+<th>Selected Job</th>
+<th>Interview</th>
+</tr>";
+
+while($nrow=$nresult->fetch_assoc())
+	{
+		$iselect=$mysqli->prepare("SELECT * FROM jobs where job_id=?");
+		$iselect->bind_param("i",$nrow['job_id']);
+		$iselect->execute();
+		$iresult=$iselect->get_result();
+		$irow=$iresult->fetch_assoc();
+		echo"<tr style='background-color:brown'>
+		<td>{$irow['title']}</td>
+		<td>{$irow['interview']}</td>
+		</tr>";
+	}
+echo"</table><br/><br/>";
+
 
 $select=$mysqli->prepare("SELECT * FROM jobs");
 $select->execute();
 $result=$select->get_result();
 
 
-
+echo"<br><br><center><h2>JOBS</h2></center>";
 		echo
 "<table class='table  table-dark' style='opacity:0.8;'>
 <tr>
@@ -109,7 +134,6 @@ echo"<td><input type='button' class='btn btn-primary' value='More...' onclick=\"
 			'Vacancies: ".$row['vacancies']."</br>'+
 			'Qualification: ".$row['qualification']."</br>'+
 			'Location: ".$row['location']."</br>'+
-			'Interview:<span style=\'color:blue\'> ".$row['interview']."</span></br>'+
 			'<center><input type=button style=\'background-color:".$color."\' id=send value=SendCV onclick=\'action1(". $row['job_id'].")\' /></center>'+
 			'<center><span id=senttxt style=\'color:red;display:".$display."\' >Your CV details has been Sent</center>';
 	

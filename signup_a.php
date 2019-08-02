@@ -285,7 +285,7 @@ error:function (){}
 		<div class="form-group">
 		<label for ="age" class="col-md-3 control-label" >Age :*</label>
 		<div class="col-md-5">
-		<input type="text" name="age" size="10" placeholder="Age" class="form-control" autofocus value="<?php echo $filled_age;?>"/>
+		<input type="text" pattern="[0-9]{1,2}" name="age" size="10" placeholder="Age" class="form-control" autofocus value="<?php echo $filled_age;?>"/>
 		<span class="error"> <?php echo $ageErr;?></span><br/>
 		</div>
 		</div>
@@ -301,7 +301,7 @@ error:function (){}
 		<div class="form-group">
 		<label for ="Email" class="col-md-3 control-label" >Email :*</label>
 		<div class="col-md-5">
-		<input type="text" name="email" placeholder="Email ID" class="form-control" autofocus size="20" value="<?php echo $filled_email;?>"/>
+		<input type="text" name="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}" placeholder="Email ID" class="form-control" autofocus size="20" value="<?php echo $filled_email;?>"/>
 		<span class="error"> <?php echo $emailErr;?></span><br/>
 		</div>
 		</div>
@@ -309,7 +309,7 @@ error:function (){}
 		<div class="form-group">
 		<label for ="phone_no" class="col-md-3 control-label" >Phone No :*</label>
 		<div class="col-md-5">
-		<input type="text" name="phone_no" placeholder="Phone " class="form-control" autofocus size="20" value="<?php echo $filled_phone;?>"/>
+		<input type="text" name="phone_no" pattern="[0-9]{10}" placeholder="Phone " class="form-control" autofocus size="20" value="<?php echo $filled_phone;?>"/>
 		<span class="error"> <?php echo $phoneErr;?></span><br/><br/>
 		</div>
 		</div>
@@ -327,7 +327,7 @@ error:function (){}
 		<div class="form-group">
 		<label for ="aadhar" class="col-md-3 control-label" >Aadhar no :*</label>
 		<div class="col-md-5">
-		<input type="text" name="aadhar" size="20" placeholder="Aadhar" class="form-control"value="<?php echo $filled_aadhar;?>"/>
+		<input type="text" name="aadhar" size="20" pattern="[0-9]{12}"placeholder="Aadhar" class="form-control"value="<?php echo $filled_aadhar;?>"/>
 		<span class="error"> <?php echo $aadharErr;?></span><br/><br/>
 		</div>
 		</div>
