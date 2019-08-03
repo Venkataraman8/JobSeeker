@@ -54,7 +54,7 @@ echo "<body>
   </nav>
 ";
 
-$nselect=$mysqli->prepare("SELECT * FROM notifications where username=?");
+/*$nselect=$mysqli->prepare("SELECT * FROM notifications where username=?");
 $nselect->bind_param("s",$username);
 $nselect->execute();
 $nresult=$nselect->get_result();
@@ -78,7 +78,7 @@ while($nrow=$nresult->fetch_assoc())
 		</tr>";
 	}
 echo"</table><br/><br/>";
-
+*/
 
 $select=$mysqli->prepare("SELECT * FROM jobs WHERE fields LIKE ?");
 $select->bind_param("s",$parameter);
